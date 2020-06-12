@@ -1,0 +1,76 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %}RecruiterApp{% endblock %}
+{% block content %}
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+        width: 90%;
+      }
+      .column {
+        float: left;
+        width: 40%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+        margin-left: 9%;
+      }
+</style>
+<br>
+<br>
+<br>
+<br>
+
+  <center>
+    <h2 class="text-primary">Our Team</h2>
+      <p>
+        <h4>Meet our exceptionally talented team</h4>
+      </p>
+  </center>
+  <div class="row">
+    <center>
+        <div class="column">
+            <div class="card">
+                <img src='{% static "images/ambani.jpg" %}'alt="Ambani" style="width:100%">
+                <div class="container">
+                <h2>Mukesh Ambani</h2>
+                <p class="title">Art Director</p>
+                <p>Some text for now lorem ipsum ipsum lorem.</p>
+                <p>ambani@example.com</p>
+                <p><button class="btn btn-primary">Contact</button></p>
+                </div>
+            </div>
+            </div>
+        <div class="column">
+        <div class="card">
+            <img src='{% static "images/murthy.jpg" %}' alt="Murthy" style="width:100%">
+            <div class="container">
+            <h2>Narayan Murthy</h2>
+            <p class="title">CEO & Founder</p>
+            <p>Some text for now lorem ipsum ipsum lorem.</p>
+            <p>murthy@example.com</p>
+            <p><button class="btn btn-primary">Contact</button></p>
+            </div>
+        </div>
+        </div>
+    
+        
+        <div class="column">
+        <div class="card">
+            <img src='{% static "images/tata.jpg" %}' alt="Tata" style="width:100%">
+            <div class="container">
+            <h2>Ratan Tata</h2>
+            <p class="title">Art Director</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>tata@example.com</p>
+            <p><button class="btn btn-primary">Contact</button></p>
+            </div>
+        </div>
+        </div>
+    </center>
+    
+  </div>
+  
+{% endblock %}
+    
+    
