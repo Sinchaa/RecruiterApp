@@ -1,0 +1,91 @@
+{% load static %}  
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  
+    <title>RecruiterApp</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" >  
+    <script src="{% static 'bootstrap.min.js' %}"></script>  
+    <style>
+      #image{
+        background-image: url('{% static "images/applicationBg.jpg" %}');
+      }
+      form{
+        width:100%;
+        background-color:white;
+        border-radius: 3%;
+        border:solid; 
+        padding:10px;
+        padding-left:30px;
+        padding-right:30px;
+        align-self: center;
+      }
+    </style>
+</head>
+
+<body>
+  <div id='image'>
+  <br><br>
+  <div class="container">
+        <section class="site-section">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-7">
+                  <div class="form-wrap">                  
+                    <form method="post" class="" >
+                        <h2 style="text-align:center;" class="text-info">Application form</h2>
+                        <br>
+                        {% csrf_token %}
+                          <h4>Personal Information</h4>
+                          <div class="form-group ">
+                            {{ form.name|as_crispy_field }}
+                          </div>
+                          
+                          <div class="form-group">
+                            {{ form.email|as_crispy_field }}
+                          </div>
+                          <div class="form-group">
+                            {{ form.phoneNo|as_crispy_field }}
+                          </div>
+                          <div class="form-group">
+                            {{ form.dob|as_crispy_field }}
+                          </div>
+                          
+                          <div class="form-group">
+                            {{ form.First_Address|as_crispy_field }}
+                          </div>
+                          <div class="form-group">
+                              {{ form.Second_Address|as_crispy_field }}
+                        </div>
+                        <hr style="border-width:2px;">
+                        <h4>Qualification Details</h4>
+                        <div class="form-group">
+                            {{ form.qualification|as_crispy_field }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.skills|as_crispy_field }}
+                        </div>
+                        <div class="form-group">
+                          {{ form.resume|as_crispy_field }}
+                      </div>                          
+                      <center>
+                        <button type="submit" style="width: 20%;" class="btn btn-primary">Apply</button>
+                      </center>
+                    </form>
+                  </div>
+                    <br>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </br></br></br>
+    </div>
+
+  </div>
+</body>
+</html>
